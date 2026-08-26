@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>0417彭宇俊 課表</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 14px;
+      background:
+        linear-gradient(
+          rgba(248, 242, 229, 0.92),
+          rgba(248, 242, 229, 0.92)
+        ),
+        repeating-linear-gradient(
+          135deg,
+          #e6dfcb 0,
+          #e6dfcb 4px,
+          #f3eedf 4px,
+          #f3eedf 12px
+        );
+
+      color: #00158c;
+
+      font-family:
+        "Microsoft JhengHei",
+        "Noto Sans TC",
+        Arial,
+        sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* 頂部標題 */
+    .top-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 6px;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .title {
+      margin: 0;
+      color: #f01818;
+      font-size: clamp(22px, 3.5vw, 34px);
+      font-weight: 500;
+    }
+
+    .back-top {
+      color: #47720c;
+      font-size: clamp(20px, 3vw, 30px);
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+
+    .back-top:hover {
+      color: #6b991a;
+    }
+
+    /* 課表 */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid #001d91;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: separate;
+      border-spacing: 3px;
+      table-layout: fixed;
+      background: rgba(245, 238, 222, 0.55);
+    }
+
+    th,
+    td {
+      border: 2px solid #002299;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    thead th {
+      height: 58px;
+      padding: 5px;
+      background: #078b88;
+      color: #ffffff;
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    thead th:first-child {
+      width: 95px;
+    }
+
+    tbody tr {
+      height: 92px;
+    }
+
+    tbody td {
+      padding: 5px 3px;
+      background: rgba(248, 240, 226, 0.72);
+    }
+
+    /* 圖片中的黃色課堂列 */
+    tbody tr.yellow-row td:not(.period) {
+      background: #ffff00;
+    }
+
+    /* 左邊節次 */
+    td.period {
+      width: 95px;
+      padding: 4px;
+      background: #00f02b;
+      color: #0016a0;
+      font-size: clamp(20px, 2.8vw, 28px);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* 課程名稱 */
+    .subject {
+      display: block;
+      color: #001595;
+      font-size: clamp(22px, 3vw, 31px);
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    /* 教室 */
+    .room {
+      display: block;
+      margin-top: 5px;
+      color: #577f2d;
+      font-size: clamp(19px, 2.6vw, 27px);
+      line-height: 1.1;
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+
+    /* 空白格 */
+    .empty {
+      color: transparent;
+    }
+
+    /* 手機顯示 */
+    @media (max-width: 760px) {
+      body {
+        padding: 6px;
+      }
+
+      .top-title {
+        gap: 12px;
+      }
+
+      table {
+        min-width: 680px;
+      }
+
+      thead th:first-child,
+      td.period {
+        width: 90px;
+      }
+
+      tbody tr {
+        height: 85px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <main class="page">
+
+    <div class="top-title">
+      <h1 class="title">0417彭宇俊 課表</h1>
+
+      #top
+        ▲ 回頂端
+      </a>
+    </div>
+
+    <div class="table-wrapper">
+
+      <table aria-label="0417彭宇俊課表">
+
+        <thead>
+          <tr>
+            <th aria-label="節次"></th>
+            <th scope="col">星期一</th>
+            <th scope="col">星期二</th>
+            <th scope="col">星期三</th>
+            <th scope="col">星期四</th>
+            <th scope="col">星期五</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- 第1節 -->
+          <tr>
+            <td class="period">第1節</td>
+
+            <td>
+              <span class="subject">林中講堂</span>
+              <span class="room">805</span>
+            </td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">922</span>
+            </td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">805</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+          </tr>
+
+          <!-- 第2節 -->
+          <tr class="yellow-row">
+            <td class="period">第2節</td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">922</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+          </tr>
+
+          <!-- 第3節 -->
+          <tr>
+            <td class="period">第3節</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">805</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+          </tr>
+
+          <!-- 第4節 -->
+          <tr class="yellow-row">
+            <td class="period">第4節</td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">922</span>
+            </td>
+          </tr>
+
+          <!-- 第5節 -->
+          <tr>
+            <td class="period">第5節</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">816</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">806</span>
+            </td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">922</span>
+            </td>
+          </tr>
+
+          <!-- 第6節 -->
+          <tr class="yellow-row">
+            <td class="period">第6節</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">806</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">816</span>
+            </td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">805</span>
+            </td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">806</span>
+            </td>
+          </tr>
+
+          <!-- 第7節 -->
+          <tr>
+            <td class="period">第7節</td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+
+            <td>
+              <span class="subject">自然</span>
+              <span class="room">816</span>
+            </td>
+
+            <td class="empty">&nbsp;</td>
+          </tr>
+
+          <!-- 第8節 -->
+          <tr class="yellow-row">
+            <td class="period">第8節</td>
+
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+            <td class="empty">&nbsp;</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
